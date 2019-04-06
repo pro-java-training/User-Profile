@@ -2,10 +2,10 @@
 <%@ page import="java.util.ArrayList" %>
 <%
     ArrayList<User> users = new ArrayList<>();
-    users.add(new User(1002, "Newton", "Issac", "Newton"));
-    users.add(new User(1003, "Galileo", "Galileo", "Galileo"));
-    users.add(new User(1004, "Albert", "Einstein", "Albert"));
-    users.add(new User(1005, "Charles", "Darwin", "Charles"));
+    users.add(new User(1002, "Newton", "Isaac", "Newton"));
+    users.add(new User(1003, "Galilei", "Galileo", "Galilei"));
+    users.add(new User(1004, "Einstein", "Albert", "Einstein"));
+    users.add(new User(1005, "Darwin", "Charles", "Darwin"));
     request.setAttribute("users", users);
 %>
 <!doctype html>
@@ -15,7 +15,7 @@
 </head>
 <body>
     ${users.stream()
-        .filter(u -> fn:contains(u.firstName, "n"))
+        .filter(u -> fn:contains(u.lastName, "n"))
         .sorted((a, b) -> (rs = a.lastName.compareTo(b.lastName);
             rs == 0 ? a.firstName.compareTo(b.firstName) : rs))
         .map(u -> {"username": u.username, "firstName": u.firstName, "lastName": u.lastName})

@@ -1,4 +1,4 @@
-<%-- @elvariable id="user" type=com.codve.User" --%>
+<%--@elvariable id="user" type="com.codve.User"--%>
 <!doctype html>
 <html lang="en">
 <head>
