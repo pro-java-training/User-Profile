@@ -1,4 +1,4 @@
-<!-- 使用jsp的隐式变量, 并设置特性  -->
+<%-- 使用jsp的隐式变量, 并设置特性  --%>
 <%
     application.setAttribute("appAttribute", "app");
     pageContext.setAttribute("pageAttribute", "page");
@@ -11,8 +11,8 @@
     <title>Info</title>
 </head>
 <body>
-    <!-- 使用EL的隐式变量 -->
-    <!--pageContext是唯一的实例, 不是map-->
+    <%-- 使用EL的隐式变量 --%>
+    <%--pageContext是唯一的实例, 不是map--%>
     Remote Address: ${pageContext.request.remoteAddr}<br/>
     Request URL: ${pageContext.request.requestURL}<br/>
     Session ID: ${pageContext.request.session.id}<br/>
