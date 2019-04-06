@@ -27,7 +27,9 @@ public class ProfileServlet extends HttpServlet {
         permissions.put("admin", true);
         user.setPermissions(permissions);
 
-        request.setAttribute("user", user);
+//        request.setAttribute("user", user);
+//        request.getSession().setAttribute("user", user); // 将对象user放到Session中
+        this.getServletContext().setAttribute("user", user); // 将对象user 放到 ServletContext中
         request.getRequestDispatcher("/WEB-INF/jsp/view/profile.jsp")
                 .forward(request, response);
     }
