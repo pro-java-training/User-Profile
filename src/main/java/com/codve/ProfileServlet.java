@@ -16,11 +16,7 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response )
         throws ServletException, IOException {
-        User user = new User();
-        user.setUserId(1001L);
-        user.setUsername("root");
-        user.setFirstName("John");
-        user.setLastName("Smith");
+        User user = new User(1001L, "root", "John", "Smith");
 
         Hashtable<String, Boolean> permissions = new Hashtable<>();
         permissions.put("user", true);

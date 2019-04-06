@@ -12,4 +12,11 @@ public class User {
     private String firstName;
     private String lastName;
     private Map<String, Boolean> permissions = new Hashtable<>();
+
+    public User(long userId, String username, String firstName, String lastName) {
+        this.userId = userId;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
